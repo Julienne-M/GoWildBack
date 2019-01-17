@@ -21,7 +21,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="comment")
+@Table(name="comments")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
 public class Comment implements Serializable{
@@ -35,7 +35,7 @@ public class Comment implements Serializable{
 	@NotBlank
 	private String content;
 
-	private int like;
+	private int liky;
 
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -66,12 +66,12 @@ public class Comment implements Serializable{
 		this.content = content;
 	}
 
-	public int getLike() {
-		return like;
+	public int getLiky() {
+		return liky;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setLiky(int liky) {
+		this.liky = liky;
 	}
 
 	public Date getCreatedAt() {

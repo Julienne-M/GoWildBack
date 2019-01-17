@@ -45,7 +45,7 @@ public class CommentController {
 	public Comment updateComment(@PathVariable(value = "id") Long commentId, @RequestBody Comment commentDetails) {
 		final Comment comment = commentRepository.findById(commentId).orElseThrow(()-> new RessourceNotFoundException("Comment", "id", commentId));
 		comment.setContent(commentDetails.getContent());
-		comment.setLike(commentDetails.getLike());
+		comment.setLiky(commentDetails.getLiky());
 
 		final Comment updateComment = commentRepository.save(comment);
 		return updateComment;
